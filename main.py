@@ -35,21 +35,21 @@ tag = bs.find(name="span", class_="a-offscreen")
 
 current_price = float(tag.getText()[1:])
 
-print(current_price)
-target_price = 87.00
-# if current_price <= target_price:
-#     # email me
-#     smtp = os.getenv('SMTP_ADDRESS')
-#     email = os.getenv('EMAIL_ADDRESS')
-#     password = os.getenv('EMAIL_PASSWORD')
-    # with smtplib.SMTP(host=smtp) as s:
-    #     s.starttls()
-    #     s.login(user=email, password=password)
-    #     s.sendmail(from_addr=email, to_addrs=email, msg=f"Subject: Buy this "
-    #                                                                                             f"monitor Now!\n\nPrice "
-    #                                                                                             f"of this samsung monitor "
-    #                                                                                             f"has fallen off to "
-    #                                                                                             f"{current_price} which "
-    #                                                                                             f"is below your set "
-    #                                                                                             f"target price."
-    #                f"URL = {url}")
+# print(current_price)
+target_price = 118.00
+if current_price <= target_price:
+    # email me
+    smtp = os.getenv('SMTP_ADDRESS')
+    email = os.getenv('EMAIL_ADDRESS')
+    password = os.getenv('EMAIL_PASSWORD')
+    with smtplib.SMTP(host=smtp) as s:
+        s.starttls()
+        s.login(user=email, password=password)
+        s.sendmail(from_addr=email, to_addrs=email, msg=f"Subject: Buy this "
+                                                                                                f"monitor Now!\n\nPrice "
+                                                                                                f"of this samsung monitor "
+                                                                                                f"has fallen off to "
+                                                                                                f"{current_price} which "
+                                                                                                f"is below your set "
+                                                                                                f"target price."
+                   f"URL = {url}")
